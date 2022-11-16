@@ -1,3 +1,5 @@
+from classes.card import Card
+
 class Player:
     def __init__(self, name, balance):
         self.name = name # players name
@@ -15,6 +17,6 @@ class Player:
         self.balance -= amount
         print(f'You lost {amount} chips')
 
-    # def showhand(self):
-    #     for x in self.hand:
-    #         Card.card_info(x)
+    def showhand(self):
+        for x in self.hand:
+            Card.card_info(x)
