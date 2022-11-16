@@ -38,17 +38,5 @@ class Deck:
         random.shuffle(self.cards) #shuffle randomizes and replaces the list, no need for useing return
         
 
-    @classmethod
-    def deal_cards(cls):
-        #get random card
-        pass
 
-class Dealer:
-    def __init__(self):
-        self.dealerscards = []
 
-class Player:
-    def __init__(self, name, balance):
-        self.name = name # players name
-        self.balance = balance #players balance
-        self.playerscards = []
