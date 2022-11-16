@@ -23,22 +23,15 @@ deckcount = bicycle.total-1
 # print(bicycle.cards[deckcount])
 # Card.card_info((bicycle.cards[deckcount]))
 
+table = [The_Dealer, Player1]
+
 def deal_cards(deckcount):
-    The_Dealer.dealerscards.append(bicycle.cards[deckcount])
-    print(Card.card_info((bicycle.cards[deckcount])))
-    deckcount -= 1
-    print(deckcount)    
-    Player1.playerscards.append(bicycle.cards[deckcount])
-    print(Card.card_info((bicycle.cards[deckcount])))
-    deckcount -= 1
-    print(deckcount)
-    The_Dealer.dealerscards.append(bicycle.cards[deckcount])
-    print(Card.card_info((bicycle.cards[deckcount])))
-    deckcount -= 1
-    print(deckcount)
-    Player1.playerscards.append(bicycle.cards[deckcount])
-    print(Card.card_info((bicycle.cards[deckcount])))
-    deckcount -= 1
-    print(deckcount)
+    for x in range(2):
+        for spot in table:
+            spot.hand.append(bicycle.cards[deckcount])
+            print(Card.card_info((bicycle.cards[deckcount])))
+            deckcount -= 1
 
 deal_cards(deckcount)
+
+# Player1.showhand()
