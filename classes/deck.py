@@ -1,4 +1,4 @@
-from . import card
+from . import card, player
 import random
 
 class Deck:
@@ -6,6 +6,7 @@ class Deck:
         suits = [ "spades" , "hearts" , "clubs" , "diamonds" ]
         self.num_of_decks = num_of_decks #specify number of decks
         self.total = num_of_decks*52
+        self.counter = self.total=1
         self.cards = []
 
         for x in range(num_of_decks):
@@ -14,7 +15,7 @@ class Deck:
                     str_val = ""
                     if i == 1:
                         str_val = "Ace"
-                        pnt_val = 1
+                        pnt_val = 11
                     elif i == 11:
                         str_val = "Jack"
                         pnt_val = 10
@@ -38,5 +39,14 @@ class Deck:
         random.shuffle(self.cards) #shuffle randomizes and replaces the list, no need for useing return
         
 
-
-
+    def deal_cards(self, table):
+        for x in range(2):
+            for player in table:
+                player.hand.append(self.cards[self.counter])
+                # print(Card.card_info((bicycle.cards[deckcount])))
+                self.counter -= 1
+        
+    # def hit(self):
+    #     Player1.hand.append(bicycle.cards[deckcount])
+    #     Player1.showhand()
+    #     deckcount -= 1

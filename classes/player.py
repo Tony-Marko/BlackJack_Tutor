@@ -25,7 +25,9 @@ class Player:
         hand_val = 0
         for x in self.hand:
             Card.card_info(x)
-            print(x.point_val)
+            # print(x.point_val)
             hand_val += x.point_val
-        print (hand_val)
+        print (f"Your hand: {hand_val}")
+        if len(self.hand) == 2 and hand_val == 21:
+            print("BLACKJACK!")
         return hand_val

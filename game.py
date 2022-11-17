@@ -12,38 +12,26 @@ bicycle.shuffle_cards() #Deck shuffled
 The_Dealer = Dealer() #Dealer Instance created
 
 Player1 = Player("Tony", 100) #Player instance created
-# print(Player1)
 
 Player.showplayer(Player1)
 
 # bicycle.cards(bicycle.total)
-print(bicycle.total)
-deckcount = bicycle.total-1
+# print(bicycle.total)
+# deckcount = bicycle.total-1
 
 # print(bicycle.cards[deckcount])
 # Card.card_info((bicycle.cards[deckcount]))
 
-table = [The_Dealer, Player1]
+table = [Player1, The_Dealer]
 
-def deal_cards(deckcount):
-    for x in range(2):
-        for spot in table:
-            spot.hand.append(bicycle.cards[deckcount])
-            # print(Card.card_info((bicycle.cards[deckcount])))
-            deckcount -= 1
-    return deckcount
-
-deckcount = deal_cards(deckcount)
+Deck.deal_cards(bicycle, table)
 
 Player1.showhand()
 The_Dealer.showfirsthand()
 
-print(deckcount)
 
-# def hit(deckcount):
-#     Player1.hand.append(bicycle.cards[deckcount])
-#     Player1.showhand()
-#     deckcount -= 1
+
+
 
 # def Dealeraction():
 #     print(f"Dealer's turn: Type hit or stand")
