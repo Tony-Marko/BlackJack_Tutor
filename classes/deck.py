@@ -1,4 +1,4 @@
-from . import card, player
+from . import card
 import random
 
 class Deck:
@@ -46,7 +46,8 @@ class Deck:
                 # print(Card.card_info((bicycle.cards[deckcount])))
                 self.counter -= 1
         
-    # def hit(self):
-    #     Player1.hand.append(bicycle.cards[deckcount])
-    #     Player1.showhand()
-    #     deckcount -= 1
+    def hit(self, player):
+        player.hand.append(self.cards[self.counter])
+        hand_val = player.showhand()
+        self.counter -= 1
+        return hand_val

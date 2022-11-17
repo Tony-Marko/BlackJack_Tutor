@@ -1,4 +1,5 @@
 from classes.card import Card
+from classes.deck import Deck
 
 class Player:
     def __init__(self, name, balance):
@@ -31,3 +32,24 @@ class Player:
         if len(self.hand) == 2 and hand_val == 21:
             print("BLACKJACK!")
         return hand_val
+
+    def action(self, bicycle):
+        print(f"{self.name}'s turn: Type hit or stand")
+        move = input("What is your move:")
+        print(move)
+        if move == "hit":
+            hand_val = Deck.hit(bicycle, self)
+            if hand_val > 21:
+                print ("BUST!")
+                return
+            else: 
+                Player.action(self, bicycle)
+        elif move == "stand":
+            print("Player stands")
+            return
+        else:
+            print("Invalid response. Try again")
+            Player.action(self, bicycle)
+
+
+

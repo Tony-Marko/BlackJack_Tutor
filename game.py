@@ -1,4 +1,3 @@
-from classes.card import Card
 from classes.dealer import Dealer
 from classes.deck import Deck
 from classes.player import Player
@@ -7,20 +6,12 @@ from classes.player import Player
 num_of_decks = 3
 bicycle = Deck(num_of_decks) #Full deck created
 bicycle.shuffle_cards() #Deck shuffled
-# bicycle.show_cards()
 
 The_Dealer = Dealer() #Dealer Instance created
 
 Player1 = Player("Tony", 100) #Player instance created
 
 Player.showplayer(Player1)
-
-# bicycle.cards(bicycle.total)
-# print(bicycle.total)
-# deckcount = bicycle.total-1
-
-# print(bicycle.cards[deckcount])
-# Card.card_info((bicycle.cards[deckcount]))
 
 table = [Player1, The_Dealer]
 
@@ -29,7 +20,7 @@ Deck.deal_cards(bicycle, table)
 Player1.showhand()
 The_Dealer.showfirsthand()
 
-
+Player.action(Player1, bicycle)
 
 
 
