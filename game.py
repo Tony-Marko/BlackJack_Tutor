@@ -31,42 +31,45 @@ def deal_cards(deckcount):
             spot.hand.append(bicycle.cards[deckcount])
             # print(Card.card_info((bicycle.cards[deckcount])))
             deckcount -= 1
+    return deckcount
 
-deal_cards(deckcount)
+deckcount = deal_cards(deckcount)
 
 Player1.showhand()
 The_Dealer.showfirsthand()
 
-def hit(deckcount):
-    Player1.hand.append(bicycle.cards[deckcount])
-    Player1.showhand()
-    deckcount -= 1
+print(deckcount)
 
-def Dealeraction():
-    print(f"Dealer's turn: Type hit or stand")
-    move = input("What is your move:")
-    print(move)
-    if move == "hit":
-        hit(deckcount)
-        Dealeraction()
-    if move == "stand":
-        print('The dealer stands')
-    else:
-        print("Invalid response. Try again")
-        Dealeraction()
+# def hit(deckcount):
+#     Player1.hand.append(bicycle.cards[deckcount])
+#     Player1.showhand()
+#     deckcount -= 1
 
-def Playeraction():
-    print(f"{Player1.name}'s turn: Type hit or stand")
-    move = input("What is your move:")
-    print(move)
-    if move == "hit":
-        hit(deckcount)
-        Playeraction()
-    if move == "stand":
-        Dealeraction()
-    else:
-        print("Invalid response. Try again")
-        Playeraction()
+# def Dealeraction():
+#     print(f"Dealer's turn: Type hit or stand")
+#     move = input("What is your move:")
+#     print(move)
+#     if move == "hit":
+#         hit(deckcount)
+#         Dealeraction()
+#     if move == "stand":
+#         print('The dealer stands')
+#     else:
+#         print("Invalid response Dealer. Try again")
+#         Dealeraction()
 
-Playeraction()
+# def Playeraction():
+#     print(f"{Player1.name}'s turn: Type hit or stand")
+#     move = input("What is your move:")
+#     print(move)
+#     if move == "hit":
+#         hit(deckcount)
+#         Playeraction()
+#     if move == "stand":
+#         Dealeraction()
+#     else:
+#         print("Invalid response. Try again")
+#         Playeraction()
+
+
 

@@ -17,6 +17,15 @@ class Player:
         self.balance -= amount
         print(f'You lost {amount} chips')
 
+    def ante(self, amount):
+        self.balance -= amount
+        print(f'You bet {amount} chips')
+
     def showhand(self):
+        hand_val = 0
         for x in self.hand:
             Card.card_info(x)
+            print(x.point_val)
+            hand_val += x.point_val
+        print (hand_val)
+        return hand_val
