@@ -21,6 +21,7 @@ Player1.showhand()
 The_Dealer.showfirsthand()
 
 Player.action(Player1, bicycle)
+Dealer.action(The_Dealer, bicycle)
 
 
 
