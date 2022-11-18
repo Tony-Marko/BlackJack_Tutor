@@ -42,12 +42,16 @@ class Deck:
     def deal_cards(self, table):
         for x in range(2):
             for player in table:
+                player.hand_val = 0
                 player.hand.append(self.cards[self.counter])
                 # print(Card.card_info((bicycle.cards[deckcount])))
                 self.counter -= 1
         
     def hit(self, player):
+        print (f'{player.name} hit with a:')
+        card.Card.card_info(self.cards[self.counter])
         player.hand.append(self.cards[self.counter])
-        hand_val = player.showhand()
+        new_val = player.hand_val + self.cards[self.counter].point_val
+        print(f"{player.name} now has {new_val}")
         self.counter -= 1
-        return hand_val
+        return new_val
